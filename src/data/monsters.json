@@ -1,0 +1,13 @@
+[
+  { "id": "M001", "name": "影蛊",   "type": "normal", "hp": 80,   "speed": 1.5, "reward": 5,   "isFlying": false, "immuneToGroundTraps": false, "specialAbility": null,                      "unlockWave": 0  },
+  { "id": "M002", "name": "厉鬼",   "type": "normal", "hp": 120,  "speed": 1.0, "reward": 8,   "isFlying": false, "immuneToGroundTraps": false, "specialAbility": "stealth_on_hit",          "unlockWave": 0  },
+  { "id": "M003", "name": "傀儡兵", "type": "normal", "hp": 300,  "speed": 0.5, "reward": 10,  "isFlying": false, "immuneToGroundTraps": false, "specialAbility": "physical_resist_30",      "unlockWave": 1  },
+  { "id": "M004", "name": "墨蛟",   "type": "normal", "hp": 150,  "speed": 1.2, "reward": 12,  "isFlying": false, "immuneToGroundTraps": true,  "specialAbility": "immune_ground_traps",     "unlockWave": 2  },
+  { "id": "M005", "name": "冥灯鬼", "type": "elite",  "hp": 200,  "speed": 1.3, "reward": 18,  "isFlying": true,  "immuneToGroundTraps": true,  "specialAbility": "flying",                  "unlockWave": 3  },
+  { "id": "B001", "name": "夔牛",   "type": "boss",   "hp": 2000, "speed": 0.4, "reward": 150, "isFlying": false, "immuneToGroundTraps": false, "specialAbility": "thunder_aoe_blind_3s",    "unlockWave": 3  },
+  { "id": "B002", "name": "饕餮",   "type": "boss",   "hp": 3000, "speed": 0.3, "reward": 200, "isFlying": false, "immuneToGroundTraps": false, "specialAbility": "devour_tower_heal_15pct", "unlockWave": 5  },
+  { "id": "B003", "name": "混沌",   "type": "boss",   "hp": 3500, "speed": 0.35,"reward": 220, "isFlying": false, "immuneToGroundTraps": false, "specialAbility": "chaos_field_random_aim",  "unlockWave": 7  },
+  { "id": "B004", "name": "九��",   "type": "boss",   "hp": 4000, "speed": 0.3, "reward": 300, "isFlying": false, "immuneToGroundTraps": false, "specialAbility": "nine_lives_revive_8x",    "unlockWave": 10 },
+  { "id": "B005", "name": "穷奇",   "type": "boss",   "hp": 3200, "speed": 0.5, "reward": 250, "isFlying": true,  "immuneToGroundTraps": true,  "specialAbility": "curse_silence_tower_60s", "unlockWave": 8  },
+  { "id": "B006", "name": "梼杌",   "type": "boss",   "hp": 5000, "speed": 0.6, "reward": 400, "isFlying": false, "immuneToGroundTraps": true,  "specialAbility": "rampage_ignore_path",     "unlockWave": 12 }
+]

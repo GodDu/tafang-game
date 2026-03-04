@@ -1,0 +1,12 @@
+{
+  "chapters": [
+    { "id": 1, "name": "幽林古道", "nights": 6, "startSpirit": 120, "description": "林间古道，妖气初现" },
+    { "id": 2, "name": "鬼渡沧江", "nights": 7, "startSpirit": 100, "description": "水路纵横，墨蛟出没" },
+    { "id": 3, "name": "混沌之渊", "nights": 8, "startSpirit": 80,  "description": "大妖频现，生死一线" }
+  ],
+  "endlessMode": {
+    "startSpirit": 150,
+    "spiritPerWave": 30,
+    "difficultyScale": 1.15
+  }
+}

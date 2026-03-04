@@ -1,0 +1,7 @@
+[
+  { "id": "archer", "name": "墨箭台", "type": "archer", "cost": 50,  "damage": 40,  "range": 180, "attackSpeed": 1.2, "icon": "/assets/icons/tower_archer.png" },
+  { "id": "spell",  "name": "符咒阵", "type": "spell",  "cost": 60,  "damage": 15,  "range": 120, "attackSpeed": 0.5, "icon": "/assets/icons/tower_spell.png"  },
+  { "id": "fire",   "name": "灵火灯", "type": "fire",   "cost": 80,  "damage": 55,  "range": 150, "attackSpeed": 0.8, "icon": "/assets/icons/tower_fire.png"   },
+  { "id": "stone",  "name": "镇妖石", "type": "stone",  "cost": 120, "damage": 120, "range": 140, "attackSpeed": 0.4, "icon": "/assets/icons/tower_stone.png"  },
+  { "id": "flag",   "name": "阵旗台", "type": "flag",   "cost": 70,  "damage": 0,   "range": 200, "attackSpeed": 0,   "icon": "/assets/icons/tower_flag.png"   }
+]
