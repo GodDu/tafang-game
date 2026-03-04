@@ -151,7 +151,7 @@ body{
 // CONSTANTS
 // ═══════════════════════════════════════════════════════════
 const CELL=40,COLS=20,ROWS=12,CW=800,CH=480;
-const MAX_DT=0.05; // cap frame delta to 50ms to prevent large time steps
+const MAX_DT=0.05; // cap frame delta to 50ms to prevent large timesteps
 
 const PATH_WPS=[
   {col:-1,row:2},{col:4,row:2},{col:4,row:9},
@@ -447,7 +447,7 @@ class Tower{
     }
     return best;
   }
-  attack(t,monsters,ps,state){}
+  attack(t,monsters,ps,state){/* subclasses must override */}
   applyBlind(dur){this.blind=true;this.blindT=Math.max(this.blindT,dur);}
   _lvBar(ctx){
     const x=this.px-CELL*0.38,y=this.py-CELL*0.44,w=CELL*0.76;
@@ -477,8 +477,7 @@ class Tower{
 class ArrowTower extends Tower{
   constructor(c,r){super(c,r,'arrow');}
   attack(t,monsters,ps,state){
-    let dmg=Math.max(1,Math.round(this.dmg*(1-t.phyRes)));
-    t.takeDamage(dmg,'physical',state,ps);
+    t.takeDamage(this.dmg,'physical',state,ps);
     ps.addLine(this.px,this.py,t.x,t.y,'#c0392b');
     ps.attackSpark(t.x,t.y,3);
     state.audio.shoot();
@@ -521,7 +520,7 @@ class TalismanTower extends Tower{
     const def=this.def;
     for(const m of monsters){
       if(!m.active||m.dead)continue;
-      if(m.gndImm)continue; // serpent immune
+      if(m.slowImmune||m.gndImm)continue; // serpent (gndImm) immune to ground-based slow effects
       const d=d2(this.px,this.py,m.x,m.y);
       if(d<=this.range){
         m.takeDamage(this.dmg,'magical',state,ps);
@@ -843,7 +842,7 @@ class MonsterPool{
   get(type){
     if(!this.pool[type])this.pool[type]=[];
     // Find a dead (used and fully inactive) monster instance to recycle
-    let m=this.pool[type].find(m=>!m.active&&m.dead);
+    let m=this.pool[type].find(inst=>!inst.active&&inst.dead);
     if(!m){m=this._make(type);this.pool[type].push(m);}
     return m;
   }
@@ -1318,7 +1317,7 @@ class Game{
     const groundWPs=this.map.getPixelWPs(false);
     const flyWPs=this.map.getPixelWPs(true);
     for(const m of this.pool.allMonsters()){
-      // Skip unspawned pool instances (active=false, dead=false) and already-dead ones
+      // Skip monsters that are not active (includes both dead and unspawned pool instances)
       if(!m.active)continue;
       const wps=m.fly?flyWPs:groundWPs;
       m.update(dt,wps,state,this.towers);
